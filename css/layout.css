@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #071E3D;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  min-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1.2rem;
+}
+
+/*# sourceMappingURL=layout.css.map */

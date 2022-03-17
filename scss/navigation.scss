@@ -1,0 +1,165 @@
+@use 'variables';
+
+header {
+    width: 100%;
+    color: variables.$primary-color;
+    border-bottom: 1px solid variables.$primary-color;
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+
+        .navbar-brand {
+            order: 1;
+            width: 40%;
+            height: auto;
+            text-align: center;
+
+            a {
+                color: variables.$primary-color;
+                font-weight: 700;
+                text-decoration: none;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .navbar-menu {
+            display: none;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            z-index: 100;
+            width: 100%;
+
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                gap: 1.2rem;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+
+                li {
+                    display: inline-block;
+
+                    a {
+                        color: variables.$primary-color;
+                        text-decoration: none;
+                    }
+
+                    a:hover {
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+
+        .search-form {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: start;
+            order: -1;
+            position: relative;
+
+            .search-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            #form-search {
+                display: block;
+                position: absolute;
+                top: 50px;
+                left: -1.2rem;
+                width: 100vw;
+                padding: 2rem 1.2rem;
+                background-color: variables.$secondary-background;
+
+                input[type=search] {
+                    display: block;
+                    width: 100%;
+                    padding: 1rem 0;
+                    background-color: transparent;
+                    color: variables.$primary-color;
+                    outline: none;
+                    border: none;
+                    border-bottom: 2px solid variables.$primary-color;
+
+                    &::placeholder {
+                        font-family: variables.$font-main;
+                        color: variables.$primary-color;
+                    }
+
+                    &:focus #form-search {
+                        border: 2px solid variables.$primary-color;
+                    }
+
+                    &::-webkit-search-cancel-button {
+                        -webkit-appearance: none;
+                        width: 16px;
+                        height: 16px;
+                        background-color: variables.$primary-color;
+                        border-radius: 16px;
+                        content: url('../svg/close-outline.svg');
+                    }
+                }
+            }
+        }
+
+        .navbar-burger {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            order: 3;
+            padding: 16px 0;
+
+            span {
+                display: block;
+                width: 24px;
+                height: 1px;
+                border-top: solid 1px variables.$primary-color;
+                transition: transform 0.5s,
+                            opacity 0.4s ease;
+            }
+
+            &:hover span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            &:hover span:nth-child(2) {
+                opacity: 0;
+                transform: rotate(0deg);
+            }
+
+            &:hover span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            // &:hover span:nth-last-child(1)  {
+            //     transform: rotate(45deg) translate(-2px, -2px);
+            // }
+
+            // &:hover span:nth-last-child(2) {
+            //     transform: rotate(-45deg) translate(0, -1px);
+            // }
+
+            // &:hover span:nth-last-child(3) {
+            //     opacity: 0;
+            //     transform: rotate(0deg);
+            // }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    
+}
